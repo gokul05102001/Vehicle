@@ -1,0 +1,21 @@
+{% extends 'basefile.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <img src="{{vehicle.image.url}}" height="200px" width="200px">
+
+
+            <h4>{{vehicle.company}}</h4>
+            <h4><b>{{vehicle.price}} /-</b></h4>
+            <h5>{{vehicle.features}}</h5>
+            <br><br>
+        </div>
+            <div class="col-md-6">
+             <li><a  class="btn btn-primary"  href="{% url 'vehicleapp:updates' vehicle.id %}">update</a></li><br>
+             <li><a class="btn btn-warning" href="{% url 'vehicleapp:delete' vehicle.id %}">delete</a></li>
+
+            </div>
+    </div>
+</div>
+{% endblock %}
